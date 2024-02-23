@@ -11,11 +11,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(inputFirstName.current.value.length <= 3){
-      alert("First name should be greater than 3 letters")
-    }else {
       setDisplayName(inputFirstName.current.value + " " + inputLastName.current.value);
-    }
   }
   return (
    <div>
@@ -24,8 +20,8 @@ function App() {
       <label htmlFor="firstName">First Name:</label>
       <input type="text" id='firstName' ref={inputFirstName} required/>
       <label htmlFor="lastName">Last Name:</label>
-      <input type="text" id='lastName' ref={inputLastName}/>
-      <input type="submit" />
+      <input type="text" id='lastName' ref={inputLastName} required/>
+      <button type='submit'>Submit</button>
     </form>
 
     {displayName.length > 0 && <h1>Full Name: {displayName}</h1>}
